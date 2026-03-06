@@ -1,55 +1,65 @@
 (() => {
   'use strict';
 
-  const STYLE_ID = 'sogokagu-injected-style';
+  const STYLE_ID = 'sogokagu-full-style';
 
   function injectStyle() {
-    if (document.getElementById(STYLE_ID)) return;
+    const old = document.getElementById(STYLE_ID);
+    if (old) old.remove();
 
     const style = document.createElement('style');
     style.id = STYLE_ID;
     style.textContent = `
-      .kb-injector {
-        background: #a9cbe0 !important;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif !important;
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
 
-      .kb-injector-main {
+      body .kb-injector {
+        background: #a9cbe0 !important;
+        color: #24384a !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Hiragino Sans", "Noto Sans JP", sans-serif !important;
+      }
+
+      body .kb-injector .kb-injector-main {
         max-width: 980px !important;
         margin: 0 auto !important;
-        padding: 12px !important;
+        padding: 18px !important;
       }
 
-      .kb-injector-header,
-      .kb-injector-body,
-      .kb-injector-footer {
+      body .kb-injector .kb-injector-header,
+      body .kb-injector .kb-injector-body,
+      body .kb-injector .kb-injector-footer {
         background: #f3f3f3 !important;
         border-radius: 20px !important;
         box-shadow: 0 8px 24px rgba(0,0,0,.08) !important;
       }
 
-      .kb-injector-header {
+      body .kb-injector .kb-injector-header {
         padding: 28px 36px !important;
         margin-bottom: 14px !important;
       }
 
-      .kb-injector-body {
+      body .kb-injector .kb-injector-body {
         padding: 20px 28px !important;
       }
 
-      .kb-injector-footer {
-        padding: 20px 28px !important;
+      body .kb-injector .kb-injector-footer {
+        padding: 18px 28px !important;
         margin-top: 14px !important;
         text-align: center !important;
       }
 
-      .kb-field {
+      body .kb-injector .kb-field {
         margin-bottom: 18px !important;
+        text-align: left !important;
       }
 
-      .kb-field input,
-      .kb-field textarea,
-      .kb-field select {
+      body .kb-injector .kb-field input,
+      body .kb-injector .kb-field textarea,
+      body .kb-injector .kb-field select {
         width: 100% !important;
         min-height: 46px !important;
         padding: 10px 12px !important;
@@ -59,19 +69,21 @@
         color: #24384a !important;
         box-sizing: border-box !important;
         font-size: 15px !important;
+        box-shadow: none !important;
+        appearance: none !important;
       }
 
-      .kb-field input:focus,
-      .kb-field textarea:focus,
-      .kb-field select:focus {
+      body .kb-injector .kb-field input:focus,
+      body .kb-injector .kb-field textarea:focus,
+      body .kb-injector .kb-field select:focus {
         border-color: #6ea8cf !important;
         box-shadow: 0 0 0 4px rgba(110,168,207,.18) !important;
         outline: none !important;
       }
 
-      .kb-injector-footer button,
-      .kb-injector-footer input[type="submit"],
-      .kb-injector-footer input[type="button"] {
+      body .kb-injector .kb-injector-footer button,
+      body .kb-injector .kb-injector-footer input[type="submit"],
+      body .kb-injector .kb-injector-footer input[type="button"] {
         background: #d88b3d !important;
         color: #fff !important;
         border: none !important;
@@ -82,15 +94,28 @@
         font-size: 18px !important;
         font-weight: 700 !important;
         cursor: pointer !important;
+        box-shadow: 0 6px 18px rgba(216,139,61,.25) !important;
+      }
+
+      @media (max-width: 767px) {
+        body .kb-injector .kb-injector-main {
+          padding: 10px !important;
+        }
+
+        body .kb-injector .kb-injector-header,
+        body .kb-injector .kb-injector-body,
+        body .kb-injector .kb-injector-footer {
+          padding: 18px !important;
+          border-radius: 16px !important;
+        }
       }
     `;
     document.head.appendChild(style);
-    console.log('style injected');
+    console.log('[SOGOKAGU] full style injected');
   }
 
   function run() {
     injectStyle();
-    document.body.style.outline = '6px solid red';
   }
 
   if (document.readyState === 'loading') {
