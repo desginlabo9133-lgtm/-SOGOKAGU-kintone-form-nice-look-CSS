@@ -1,243 +1,41 @@
-body {
-  background: #ff00ff !important;
-}
-/* =========================
-   SOGOKAGU / kintone form nice-look CSS
-   そのまま style.css に貼って使ってOK
-   ========================= */
-
-/* --- ベース --- */
-:root{
-  --bg: #eef6ee;           /* 画面背景 */
-  --card: #ffffff;         /* カード背景 */
-  --text: #1f2937;         /* 文字 */
-  --muted: #6b7280;        /* サブ文字 */
-  --border: #e5e7eb;       /* 罫線 */
-  --shadow: 0 12px 30px rgba(0,0,0,.10);
-  --shadow2: 0 8px 18px rgba(0,0,0,.08);
-  --radius: 22px;
-  --radius2: 14px;
-  --accent: #2b5cff;       /* ボタン */
-  --accent2:#1f4fff;
-  --focus: rgba(43,92,255,.20);
+.kb-injector {
+  background:#eaf3f8;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;
 }
 
-html, body{
-  height: 100%;
+/* フォーム中央寄せ */
+.kb-injector form {
+  max-width:900px;
+  margin:0 auto;
 }
 
-body{
-  background: var(--bg) !important;
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
-               "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+/* カード化 */
+.kb-injector form > div {
+  background:#ffffff;
+  border-radius:20px;
+  padding:28px;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-/* --- 全体の余白（フォームが中央寄りに見えるように） --- */
-body > *{
-  box-sizing: border-box;
+/* 入力欄 */
+.kb-injector input,
+.kb-injector textarea {
+  width:100%;
+  height:44px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #d9e1e7;
+  box-sizing:border-box;
 }
 
-/* --- タイトル周り（見出しっぽく） --- */
-h1, h2, h3, .title, .form-title{
-  letter-spacing: .02em;
+/* 送信ボタン */
+.kb-injector button,
+.kb-injector input[type="submit"]{
+  background:#d8893c;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:12px 28px;
+  font-size:16px;
 }
-
-/* 画面上部の白い枠（ヘッダー領域）っぽいものをカード化 */
-div, section{
-  box-sizing: border-box;
-}
-
-/* それっぽい「白い枠」全般を整える（BoostフォームはDIV多めなので汎用に寄せてます） */
-div[style*="background"], .box, .container, .content, .form-area{
-  border-radius: var(--radius);
-}
-
-/* --- カード（白い枠）を“ちゃんとしたカード”に --- */
-body .gaia-argoui-app,
-body .app-index,
-body .app-index-container,
-body .app-content,
-body .kintone-app,
-body .kintone-app-body{
-  background: transparent !important;
-}
-
-/* 白いブロックに見えるエリアを綺麗に：よくある構造を広めに拾う */
-body .subtable-gaia,
-body .gaia-argoui-layout,
-body .gaia-argoui-app > div,
-body .kintone-app-body > div{
-  border-radius: var(--radius);
-}
-
-/* 実際のフォーム内容の“塊”が中央に寄るように（効かなければ無視されます） */
-body form,
-body .form,
-body .gaia-argoui-app{
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-/* --- 白カード風：入力エリアが載ってる箱をそれっぽく --- */
-body form > div,
-body .form > div{
-  background: var(--card);
-  box-shadow: var(--shadow2);
-  border: 1px solid rgba(229,231,235,.75);
-  border-radius: var(--radius);
-  padding: 26px 26px;
-  margin: 18px 0;
-}
-
-/* --- ラベル --- */
-label, .label, .field-label{
-  display: inline-block;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-/* --- 入力欄（テキスト・メール・番号・住所など） --- */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-input[type="search"],
-textarea,
-select{
-  width: 100% !important;
-  background: #fff;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius2) !important;
-  padding: 12px 14px !important;
-  font-size: 16px !important;
-  color: var(--text) !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02);
-  transition: box-shadow .15s ease, border-color .15s ease, transform .05s ease;
-}
-
-/* 住所など長文入力 */
-textarea{
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* フォーカス時（気持ちいいやつ） */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-textarea:focus,
-select:focus{
-  outline: none !important;
-  border-color: var(--accent) !important;
-  box-shadow: 0 0 0 4px var(--focus);
-}
-
-/* プレースホルダ */
-::placeholder{
-  color: #9ca3af;
-}
-
-/* --- ボタン（送信） --- */
-button,
-input[type="submit"],
-a.button,
-.btn,
-.button{
-  appearance: none;
-  border: none !important;
-  border-radius: 16px !important;
-  padding: 14px 26px !important;
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: .02em;
-  color: #fff !important;
-  background: linear-gradient(180deg, var(--accent), var(--accent2)) !important;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: transform .08s ease, box-shadow .15s ease, filter .15s ease;
-}
-
-/* hover/active */
-button:hover,
-input[type="submit"]:hover,
-a.button:hover,
-.btn:hover,
-.button:hover{
-  filter: brightness(1.02);
-  box-shadow: 0 14px 34px rgba(0,0,0,.14);
-}
-
-button:active,
-input[type="submit"]:active,
-a.button:active,
-.btn:active,
-.button:active{
-  transform: translateY(1px);
-  box-shadow: 0 10px 26px rgba(0,0,0,.12);
-}
-
-/* 送信ボタンを中央＆少し大きめに見せる（効く環境だけ適用） */
-body form button,
-body form input[type="submit"]{
-  display: block;
-  margin: 26px auto 10px;
-  min-width: 180px;
-}
-
-/* --- 説明文 --- */
-p, .description, .note{
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* --- 必須マークっぽいのがある場合の見せ方（よくあるクラス名） --- */
-.required, .req, .is-required{
-  color: #ef4444;
-  font-weight: 800;
-}
-
-/* --- スマホ最適化 --- */
-@media (max-width: 640px){
-  body form,
-  body .form,
-  body .gaia-argoui-app{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  body form > div,
-  body .form > div{
-    padding: 18px 16px;
-    margin: 14px 0;
-    border-radius: 18px;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="number"],
-  textarea,
-  select{
-    font-size: 16px !important; /* iPhoneの拡大防止 */
-  }
-
-  button, input[type="submit"]{
-    width: 100%;
-    min-width: 0;
-  }
-
-}
-
-
-
