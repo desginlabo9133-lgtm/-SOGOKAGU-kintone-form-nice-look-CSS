@@ -1,0 +1,9 @@
+body .kb-injector main.kb-injector-body {
+  background: #ff00ff !important;
+  border: 10px solid red !important;
+}
+
+body .kb-injector footer.kb-injector-footer {
+  background: #ff00ff !important;
+  border: 10px solid red !important;
+}
