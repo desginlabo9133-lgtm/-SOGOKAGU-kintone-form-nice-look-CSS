@@ -1,6 +1,5 @@
-/* 反映確認用：当たったらすぐ分かる */
-.gaia-argoui-app { outline: 8px solid red !important; }
-
+/* 反映してたら必ず分かるテスト */
+body { background: #ff00ff !important; }
 /* =========================
    SOGOKAGU / kintone form nice-look CSS
    そのまま style.css に貼って使ってOK
@@ -238,3 +237,4 @@ p, .description, .note{
   }
 
 }
+
