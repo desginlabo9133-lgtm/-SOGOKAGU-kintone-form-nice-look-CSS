@@ -1,10 +1,16 @@
-body .kb-injector .kb-injector-main .kb-injector-body {
+body .kb-injector main.kb-injector-body {
+  background: #ff00ff !important;
+  border: 10px solid red !important;
+}
+
+body .kb-injector footer.kb-injector-footer {
   background: #ff00ff !important;
   border: 10px solid red !important;
 }
 
 body .kb-injector .kb-field {
   background: #fff8cc !important;
+  border: 2px dashed blue !important;
 }
 
 body .kb-injector .kb-field input,
