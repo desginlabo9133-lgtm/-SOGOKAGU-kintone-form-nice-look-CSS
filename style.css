@@ -1,5 +1,12 @@
-/* 反映してたら必ず分かるテスト */
-body { background: #ff00ff !important; }
+/* 効いてるかの確認 */
+body {
+  background: #ffb3c7 !important;
+}
+
+input, textarea, select, button {
+  border: 3px solid red !important;
+  background: #fff8cc !important;
+}
 /* =========================
    SOGOKAGU / kintone form nice-look CSS
    そのまま style.css に貼って使ってOK
@@ -237,4 +244,5 @@ p, .description, .note{
   }
 
 }
+
 
