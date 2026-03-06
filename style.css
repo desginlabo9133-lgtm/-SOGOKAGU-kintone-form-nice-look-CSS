@@ -1,136 +1,15 @@
-/* ===== Boost! Injector 専用 ===== */
-
-body .kb-injector {
-  background: #a9cbe0 !important;
-  color: #24384a !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif !important;
+body .kb-injector .kb-injector-main .kb-injector-body {
+  background: #ff00ff !important;
+  border: 8px solid red !important;
 }
 
-/* 全体幅 */
-body .kb-injector .kb-injector-main {
-  max-width: 980px !important;
-  margin: 0 auto !important;
-  padding: 12px !important;
-}
-
-/* ヘッダー */
-body .kb-injector .kb-injector-header {
-  background: #f3f3f3 !important;
-  border-radius: 22px !important;
-  padding: 28px 36px !important;
-  margin-bottom: 14px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.06) !important;
-}
-
-body .kb-injector .kb-injector-header-title {
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  line-height: 1.4 !important;
-  margin-bottom: 12px !important;
-}
-
-body .kb-injector .kb-injector-header-description {
-  font-size: 15px !important;
-  line-height: 2 !important;
-  color: #31465a !important;
-}
-
-/* フォーム本体 */
-body .kb-injector .kb-injector-body {
-  background: #f3f3f3 !important;
-  border-radius: 22px !important;
-  padding: 20px 28px 28px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.06) !important;
-}
-
-/* 各項目ブロック */
 body .kb-injector .kb-field {
-  margin-bottom: 18px !important;
-  text-align: left !important;
+  background: #fff8cc !important;
 }
 
-/* 項目名ラベル
-   ※ Boost側の実DOMに合わせて幅広めに取る */
-body .kb-injector .kb-field label,
-body .kb-injector .kb-field .control-label,
-body .kb-injector .kb-field [class*="label"],
-body .kb-injector .kb-field-title {
-  display: block !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  color: #24384a !important;
-  margin-bottom: 8px !important;
-}
-
-/* 入力欄 */
-body .kb-injector .kb-field input[type="text"],
-body .kb-injector .kb-field input[type="email"],
-body .kb-injector .kb-field input[type="tel"],
-body .kb-injector .kb-field input[type="number"],
+body .kb-injector .kb-field input,
 body .kb-injector .kb-field textarea,
 body .kb-injector .kb-field select {
-  width: 100% !important;
-  min-height: 46px !important;
-  padding: 10px 12px !important;
-  border: 1px solid #c8d4de !important;
-  border-radius: 8px !important;
-  background: #ffffff !important;
-  color: #24384a !important;
-  box-sizing: border-box !important;
-  font-size: 15px !important;
-  box-shadow: none !important;
-  appearance: none !important;
-}
-
-/* フォーカス */
-body .kb-injector .kb-field input:focus,
-body .kb-injector .kb-field textarea:focus,
-body .kb-injector .kb-field select:focus {
-  border-color: #6ea8cf !important;
-  box-shadow: 0 0 0 4px rgba(110,168,207,.18) !important;
-  outline: none !important;
-}
-
-/* 送信ボタン周り */
-body .kb-injector .kb-injector-body button,
-body .kb-injector .kb-injector-body input[type="submit"],
-body .kb-injector .kb-injector-body input[type="button"] {
-  background: #d88b3d !important;
-  color: #fff !important;
-  border: none !important;
-  border-radius: 8px !important;
-  min-width: 120px !important;
-  height: 48px !important;
-  padding: 0 24px !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  box-shadow: 0 6px 18px rgba(216,139,61,.25) !important;
-  cursor: pointer !important;
-}
-
-/* ボタン中央寄せっぽく見せる */
-body .kb-injector .kb-injector-body form,
-body .kb-injector .kb-injector-body {
-  text-align: center !important;
-}
-
-body .kb-injector .kb-field {
-  text-align: left !important;
-}
-
-/* スマホ */
-@media (max-width: 767px) {
-  body .kb-injector .kb-injector-main {
-    padding: 10px !important;
-  }
-
-  body .kb-injector .kb-injector-header,
-  body .kb-injector .kb-injector-body {
-    padding: 18px !important;
-    border-radius: 16px !important;
-  }
-
-  body .kb-injector .kb-injector-header-title {
-    font-size: 20px !important;
-  }
+  border: 4px solid blue !important;
+  background: yellow !important;
 }
